@@ -1,0 +1,41 @@
+<h1 class="text-center">Pizza Menu</h1>
+<table class="table table-bordered">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Name</th>
+      <th scope="col">Price</th>
+      <th scope="col">Description</th>
+      <th scope="col">Pizza Details</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let pizza of allPizzas">
+      <td>{{pizza.id}}</td>
+      <td>{{pizza.name}}</td>
+      <td>{{pizza.smallDescription}}</td>
+      <td>{{pizza.bigDescription}}</td>
+      <td>{{pizza.price}}</td>
+      <td><a [routerLink]="['/pizza-details', pizza.id]">More</a></td>
+    </tr>
+  </tbody>
+</table>
+
+
+<h1 class="text-center mt-5">Pizza ID and Pizza Type ID</h1>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">Pizza ID</th>
+      <th scope="col">Type ID</th>
+      <th scope="col">Name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let pizza of allPizzas">
+      <td>{{pizza.id}}</td>
+      <td>{{pizza.type?.id}}</td>
+      <td>{{pizza.type?.name}}</td>
+    </tr>
+  </tbody>
+</table>
