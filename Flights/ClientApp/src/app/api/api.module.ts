@@ -5,6 +5,7 @@ import { HttpClient } from '@angular/common/http';
 import { ApiConfiguration, ApiConfigurationParams } from './api-configuration';
 
 import { PizzaService } from './services/pizza.service';
+import { SouvlakiService } from './services/souvlaki.service';
 
 /**
  * Module that provides all services and configuration.
@@ -15,6 +16,7 @@ import { PizzaService } from './services/pizza.service';
   declarations: [],
   providers: [
     PizzaService,
+    SouvlakiService,
     ApiConfiguration
   ],
 })

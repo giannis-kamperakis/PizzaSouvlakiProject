@@ -8,23 +8,30 @@ import { AppComponent } from './app.component';
 import { NavMenuComponent } from './nav-menu/nav-menu.component';
 import { PizzaComponent } from './pizza/pizza.component';
 import { PizzaDetailsComponent } from './pizza-details/pizza-details.component';
+import { HomepageComponent } from './homepage/homepage.component';
+import { SouvlakiComponent } from './souvlaki/souvlaki.component';
+import { SouvlakiDetailsComponent } from './souvlaki-details/souvlaki-details.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     NavMenuComponent,
     PizzaComponent,
-    PizzaDetailsComponent
+    PizzaDetailsComponent,
+    HomepageComponent,
+    SouvlakiComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
     HttpClientModule,
     FormsModule,
     RouterModule.forRoot([
-      { path: '', component: PizzaComponent, pathMatch: 'full' },
+      { path: '', component: HomepageComponent, pathMatch: 'full' },
       { path: 'pizza', component: PizzaComponent },
+      { path: 'souvlaki', component: SouvlakiComponent },
       { path: 'pizza-details/:pizzaId', component: PizzaDetailsComponent },
-
+      { path: 'souvlaki-details/:souvlakiId', component: SouvlakiDetailsComponent }
     ])
   ],
   providers: [],

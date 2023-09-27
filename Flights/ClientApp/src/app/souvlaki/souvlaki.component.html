@@ -1,0 +1,41 @@
+<h1 class="text-center">Souvlaki Menu</h1>
+<table class="table table-bordered">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Name</th>
+      <th scope="col">Price</th>
+      <th scope="col">Description</th>
+      <th scope="col">Souvlaki Details</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let souvlaki of allSouvlaki">
+      <td>{{souvlaki.id}}</td>
+      <td>{{souvlaki.name}}</td>
+      <td>{{souvlaki.smallDescription}}</td>
+      <td>{{souvlaki.bigDescription}}</td>
+      <td>{{souvlaki.price}}</td>
+      <td><a [routerLink]="['/souvlaki-details', souvlaki.id]">More</a></td>
+    </tr>
+  </tbody>
+</table>
+
+
+<h1 class="text-center mt-5">Souvlaki ID and Souvlaki Type ID</h1>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">Souvlaki ID</th>
+      <th scope="col">Type ID</th>
+      <th scope="col">Name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let souvlaki of allSouvlaki">
+      <td>{{souvlaki.id}}</td>
+      <td>{{souvlaki.type?.id}}</td>
+      <td>{{souvlaki.type?.name}}</td>
+    </tr>
+  </tbody>
+</table>
