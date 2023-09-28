@@ -6,7 +6,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "Flights": {
+    "PizzaSouvlakiProject": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:application": {
@@ -73,10 +73,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "Flights:build:production"
+              "browserTarget": "PizzaSouvlakiProject:build:production"
             },
             "development": {
-              "browserTarget": "Flights:build:development",
+              "browserTarget": "PizzaSouvlakiProject:build:development",
               "proxyConfig": "proxy.conf.js"
             }
           },
@@ -85,7 +85,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "Flights:build"
+            "browserTarget": "PizzaSouvlakiProject:build"
           }
         },
         "test": {
@@ -133,5 +133,5 @@
       }
     }
   },
-  "defaultProject": "Flights"
+  "defaultProject": "PizzaSouvlakiProject"
 }

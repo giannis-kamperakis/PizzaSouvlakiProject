@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32319.34
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PizzaSouvlakiProject", "Flights\PizzaSouvlakiProject.csproj", "{0B50A68A-3BDB-480A-97DE-DE795132CE69}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PizzaSouvlakiProject", "PizzaSouvlakiProject\PizzaSouvlakiProject.csproj", "{24F680B9-DD5B-4A63-BCDE-C650038ED6B8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +11,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{0B50A68A-3BDB-480A-97DE-DE795132CE69}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0B50A68A-3BDB-480A-97DE-DE795132CE69}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0B50A68A-3BDB-480A-97DE-DE795132CE69}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0B50A68A-3BDB-480A-97DE-DE795132CE69}.Release|Any CPU.Build.0 = Release|Any CPU
+		{24F680B9-DD5B-4A63-BCDE-C650038ED6B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24F680B9-DD5B-4A63-BCDE-C650038ED6B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24F680B9-DD5B-4A63-BCDE-C650038ED6B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24F680B9-DD5B-4A63-BCDE-C650038ED6B8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

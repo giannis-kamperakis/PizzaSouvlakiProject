@@ -8,7 +8,7 @@
     }
   },
   "profiles": {
-    "Flights": {
+    "PizzaSouvlakiProject": {
       "commandName": "Project",
       "launchBrowser": true,
       "applicationUrl": "https://localhost:7280;http://localhost:5280",
