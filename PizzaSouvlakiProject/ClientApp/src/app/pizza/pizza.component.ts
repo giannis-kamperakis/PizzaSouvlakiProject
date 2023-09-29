@@ -1,7 +1,7 @@
 import { Time } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { PizzaService } from '../api/services/pizza.service';
-import { Pizza, PizzaType } from '../api/models';
+import { Pizza, FoodType } from '../api/models';
 
 @Component({
   selector: 'app-pizza',
@@ -11,7 +11,7 @@ import { Pizza, PizzaType } from '../api/models';
 export class PizzaComponent implements OnInit {
 
 
-  allPizzas: Pizza[] = []
+  allPizza: Pizza[] = []
 
   constructor(private pizzaService: PizzaService) { }
 
@@ -21,7 +21,7 @@ export class PizzaComponent implements OnInit {
 
   search() {
     this.pizzaService.searchPizza({})
-      .subscribe(response => this.allPizzas = response,
+      .subscribe(response => this.allPizza = response,
         this.handleError)
   }
 

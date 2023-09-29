@@ -1,7 +1,7 @@
 import { Time } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { SouvlakiService } from '../api/services/souvlaki.service';
-import { Souvlaki, SouvlakiType } from '../api/models';
+import { Souvlaki, FoodType } from '../api/models';
 
 @Component({
   selector: 'app-souvlaki',

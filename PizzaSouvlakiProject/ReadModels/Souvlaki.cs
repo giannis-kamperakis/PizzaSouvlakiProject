@@ -1,15 +1,17 @@
-﻿namespace Pizza.ReadModels
+﻿using PizzaSouvlakiProject.ReadModels;
+
+namespace Pizza.ReadModels
 {
     public class Souvlaki
     {
-        public Guid Id { get; set; }
+        public string Id { get; set; }
         public string Name { get; set; }
         public string SmallDescription { get; set; }
         public string BigDescription { get; set; }
-        public SouvlakiType Type { get; set; }
-        public float Price { get; set; }
+        public FoodType Type { get; set; }
+        public string Price { get; set; }
 
-        public Souvlaki(Guid id, string name, string smallDescription, string bigDescription, SouvlakiType type, float price)
+        public Souvlaki(string id, string name, string smallDescription, string bigDescription, string price, FoodType type)
         {
             Id = id;
             Name = name;

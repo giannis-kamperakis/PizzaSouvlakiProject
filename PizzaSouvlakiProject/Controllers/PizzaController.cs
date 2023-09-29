@@ -1,5 +1,7 @@
-﻿using Pizza.ReadModels;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
+using Pizza.ReadModels;
+using PizzaSouvlakiProject.ReadModels;
+using System.Data.SqlClient;
 
 namespace allPizzas.Controllers
 {
@@ -9,46 +11,76 @@ namespace allPizzas.Controllers
     {
         private readonly ILogger<PizzaController> _logger;
 
-        static Random random = new Random();
+        string dataSource = "sqlite-customers";
+        string initialCatalog = "PizzaSouvlakiProject";
 
-        static private Pizza.ReadModels.Pizza[] allPizzas = new Pizza.ReadModels.Pizza[] {
-                new (
-                        Guid.NewGuid(),
-                        "Special",
-                        "1 Small Description",
-                        "Special - Everything in a good bite of pizza should be balanced. " +
-                            "The sauce shouldn't overpower the cheese and vice versa, the crust-to-sauce ratio should be even, " +
-                            "and the choice of toppings should work fine together.",
-                        new PizzaType(Guid.NewGuid(), "Vegetarian"),
-                        12.5f
-                    ),
-                new (
-                        Guid.NewGuid(),
-                        "American BBQ",
-                        "2 Small Description",
-                        "American BBQ - Everything in a good bite of pizza should be balanced. " +
-                        "The sauce shouldn't overpower the cheese and vice versa, the crust-to-sauce ratio should be even, " +
-                        "and the choice of toppings should work fine together.",
-                        new PizzaType(Guid.NewGuid(), "Non-Vegetarian"),
-                        8.5f
+        string connectionString = @"Data Source=(LocalDb)\\{dataSource}; Initial Catalog={initialCatalog}; Integrated Security=True";
 
-                    ),
-                new (
-                        Guid.NewGuid(),
-                        "Olives, Mushrooms and other stuff",
-                        "3 Small Description",
-                        "Olives, Mushrooms and other stuff - Everything in a good bite of pizza should be balanced. " +
-                        "The sauce shouldn't overpower the cheese and vice versa, the crust-to-sauce ratio should be even, " +
-                        "and the choice of toppings should work fine together.",
-                        new PizzaType(Guid.NewGuid(), "Vegan"),
-                        18.5f
-
-                    )
-            };
+        static private List<Pizza.ReadModels.Pizza> allPizza = new List<Pizza.ReadModels.Pizza>();
 
         public PizzaController(ILogger<PizzaController> logger)
         {
             _logger = logger;
+
+            if (!(allPizza.Count != 0))
+            {
+                string query = "";
+
+                query = @"
+                          SELECT 
+                            sou.Id, 
+                            sou.Name, 
+                            sou.SmallDescription, 
+                            sou.BigDescription,
+                            sou.Price,
+                            ty.Id,
+                            ty.Name
+                        FROM Pizza AS sou INNER JOIN Type as ty on sou.TypeId = ty.Id
+                    ";
+
+
+                using (SqlConnection connection = new SqlConnection(
+                           connectionString))
+                {
+                    SqlCommand command = new SqlCommand(
+                        query, connection);
+                    connection.Open();
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        string id = "";
+                        string name = "";
+                        string smallDescription = "";
+                        string bigDescription = "";
+                        string price = "";
+                        string typeId = "";
+                        string typeName = "";
+
+                        while (reader.Read())
+                        {
+                            id = reader.GetValue(0).ToString();
+                            name = reader.GetValue(1).ToString();
+                            smallDescription = reader.GetValue(2).ToString();
+                            bigDescription = reader.GetValue(3).ToString();
+                            price = reader.GetValue(4).ToString();
+                            typeId = reader.GetValue(5).ToString();
+                            typeName = reader.GetValue(6).ToString();
+
+                            allPizza.Add(new Pizza.ReadModels.Pizza(
+                                        id,
+                                        name,
+                                        smallDescription,
+                                        bigDescription,
+                                        price,
+                                        new FoodType(typeId, typeName)
+                                    )
+                            );
+                        }
+
+                        reader.Close();
+                    }
+                    connection.Close();
+                }
+            }
         }
 
         [HttpGet]
@@ -56,16 +88,16 @@ namespace allPizzas.Controllers
         [ProducesResponseType(500)]
         [ProducesResponseType(typeof(IEnumerable<Pizza.ReadModels.Pizza>), 200)]
         public IEnumerable<Pizza.ReadModels.Pizza> Search()
-        => allPizzas;
+        => allPizza;
 
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [HttpGet("{id}")]
         [ProducesResponseType(400)]
         [ProducesResponseType(500)]
         [ProducesResponseType(typeof(Pizza.ReadModels.Pizza),200)]
-        public ActionResult<Pizza.ReadModels.Pizza> Find(Guid id)
+        public ActionResult<Pizza.ReadModels.Pizza> Find(string id)
         {
-            var flight = allPizzas.SingleOrDefault(f => f.Id == id);
+            var flight = allPizza.SingleOrDefault(f => f.Id == id);
 
             if (flight == null)
                 return NotFound();

@@ -1,11 +1,11 @@
 /* tslint:disable */
 /* eslint-disable */
-import { SouvlakiType } from './souvlaki-type';
+import { FoodType } from './food-type';
 export interface Souvlaki {
   bigDescription?: null | string;
-  id?: string;
+  id?: null | string;
   name?: null | string;
-  price?: number;
+  price?: null | string;
   smallDescription?: null | string;
-  type?: SouvlakiType;
+  type?: FoodType;
 }

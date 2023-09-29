@@ -1,11 +1,11 @@
 /* tslint:disable */
 /* eslint-disable */
-import { PizzaType } from './pizza-type';
+import { FoodType } from './food-type';
 export interface Pizza {
   bigDescription?: null | string;
-  id?: string;
+  id?: null | string;
   name?: null | string;
   price?: number;
   smallDescription?: null | string;
-  type?: PizzaType;
+  type?: FoodType;
 }
