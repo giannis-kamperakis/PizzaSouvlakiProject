@@ -11,10 +11,7 @@ namespace allPizzas.Controllers
     {
         private readonly ILogger<PizzaController> _logger;
 
-        string dataSource = "sqlite-customers";
-        string initialCatalog = "PizzaSouvlakiProject";
-
-        string connectionString = @"Data Source=(LocalDb)\\{dataSource}; Initial Catalog={initialCatalog}; Integrated Security=True";
+        string connectionString = "Data Source=(LocalDb)\\sqlite-customers; Initial Catalog=PizzaSouvlakiProject; Integrated Security=True";
 
         static private List<Pizza.ReadModels.Pizza> allPizza = new List<Pizza.ReadModels.Pizza>();
 
