@@ -5,7 +5,7 @@ export interface Pizza {
   bigDescription?: null | string;
   id?: null | string;
   name?: null | string;
-  price?: number;
+  price?: null | string;
   smallDescription?: null | string;
   type?: FoodType;
 }

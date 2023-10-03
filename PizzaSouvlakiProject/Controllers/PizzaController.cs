@@ -32,7 +32,7 @@ namespace allPizzas.Controllers
                             sou.Price,
                             ty.Id,
                             ty.Name
-                        FROM Pizza AS sou INNER JOIN Type as ty on sou.TypeId = ty.Id
+                        FROM Pizza AS sou INNER JOIN FoodType as ty on sou.TypeId = ty.Id
                     ";
 
 

@@ -11,6 +11,7 @@ import { PizzaDetailsComponent } from './pizza-details/pizza-details.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { SouvlakiComponent } from './souvlaki/souvlaki.component';
 import { SouvlakiDetailsComponent } from './souvlaki-details/souvlaki-details.component';
+import { ContactUsComponent } from './contact-us/contact-us.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { SouvlakiDetailsComponent } from './souvlaki-details/souvlaki-details.co
     PizzaComponent,
     PizzaDetailsComponent,
     HomepageComponent,
-    SouvlakiComponent
+    SouvlakiComponent,
+    ContactUsComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -31,7 +33,8 @@ import { SouvlakiDetailsComponent } from './souvlaki-details/souvlaki-details.co
       { path: 'pizza', component: PizzaComponent },
       { path: 'souvlaki', component: SouvlakiComponent },
       { path: 'pizza-details/:pizzaId', component: PizzaDetailsComponent },
-      { path: 'souvlaki-details/:souvlakiId', component: SouvlakiDetailsComponent }
+      { path: 'souvlaki-details/:souvlakiId', component: SouvlakiDetailsComponent },
+      { path: 'contact-us', component: ContactUsComponent }
     ])
   ],
   providers: [],

@@ -1,0 +1,17 @@
+<div class="text-center mt-5">
+  <h1>Make a suggestion!</h1>
+  <br />
+  <p>Submit the following form and suggest us a food that you would like to see in our menu!</p>
+
+  <ul>
+    <li *ngFor="let menu from menuList">
+      {{menu}}
+    </li>
+  </ul>
+
+  <ul>
+    <li *ngFor="let type from typeList">
+      {{type}}
+    </li>
+  </ul>
+</div>

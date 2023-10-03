@@ -34,7 +34,7 @@ namespace allSouvlakia.Controllers
                             sou.Price,
                             ty.Id,
                             ty.Name
-                        FROM Souvlaki AS sou INNER JOIN Type as ty on sou.TypeId = ty.Id
+                        FROM Souvlaki AS sou INNER JOIN FoodType as ty on sou.TypeId = ty.Id
                     ";
 
 
