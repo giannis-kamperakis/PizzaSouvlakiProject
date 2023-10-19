@@ -1,4 +1,3 @@
-import { Time } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { PizzaService } from '../api/services/pizza.service';
 import { Pizza, FoodType } from '../api/models';
@@ -6,10 +5,9 @@ import { Pizza, FoodType } from '../api/models';
 @Component({
   selector: 'app-pizza',
   templateUrl: './pizza.component.html',
-  styleUrls: ['./pizza.component.css']
+  styleUrls: ['./pizza.component.css'],
 })
 export class PizzaComponent implements OnInit {
-
 
   allPizza: Pizza[] = []
 
@@ -24,6 +22,27 @@ export class PizzaComponent implements OnInit {
       .subscribe(response => this.allPizza = response,
         this.handleError)
   }
+
+
+
+  expandedPizzaRows: Set<string> = new Set();
+
+  isExpanded(pizzaId: string | null | undefined): boolean {
+    return !!pizzaId && this.expandedPizzaRows.has(pizzaId);
+  }
+
+
+  toggleDetails(pizza: any) {
+    const pizzaId = pizza.id.toString();
+
+    if (this.isExpanded(pizzaId)) {
+      this.expandedPizzaRows.delete(pizzaId);
+    } else {
+      this.expandedPizzaRows.add(pizzaId); 
+    }
+  }
+
+
 
   private handleError(err: any) {
     console.log("Response Error. Status: ", err.status)

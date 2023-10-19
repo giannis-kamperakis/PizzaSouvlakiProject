@@ -10,7 +10,7 @@ namespace PizzaSouvlakiProject.Controllers
     {
         private readonly ILogger<ContactUsSuggestionsController> _logger;
 
-        string connectionString = "Data Source=(LocalDb)\\sqlite-customers; Initial Catalog=PizzaSouvlakiProject; Integrated Security=True";
+        string connectionString = "Data Source=(LocalDb)\\PizzaSouvlakiDB; Initial Catalog=PizzaSouvlakiProject; Integrated Security=True";
 
         static private List<FoodType> allFoodTypes = new List<FoodType>();
 

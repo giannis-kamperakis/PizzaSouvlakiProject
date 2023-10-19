@@ -1,41 +1,71 @@
-<h1 class="text-center">Pizza Menu</h1>
-<table class="table table-bordered">
-  <thead class="thead-dark">
-    <tr>
-      <th scope="col">ID</th>
-      <th scope="col">Name</th>
-      <th scope="col">Price</th>
-      <th scope="col">Description</th>
-      <th scope="col">Pizza Details</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let pizza of allPizza">
-      <td>{{pizza.id}}</td>
-      <td>{{pizza.name}}</td>
-      <td>{{pizza.smallDescription}}</td>
-      <td>{{pizza.bigDescription}}</td>
-      <td>{{pizza.price}}</td>
-      <td><a [routerLink]="['/pizza-details', pizza.id]">More</a></td>
-    </tr>
-  </tbody>
-</table>
+<!-- <h1 text-align: center>Pizza Menu</h1>
+  <table class="table table-bordered">
 
 
-<h1 class="text-center mt-5">Pizza ID and Pizza Type ID</h1>
-<table class="table table-bordered">
-  <thead>
-    <tr>
-      <th scope="col">Pizza ID</th>
-      <th scope="col">Type ID</th>
-      <th scope="col">Name</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let pizza of allPizza">
-      <td>{{pizza.id}}</td>
-      <td>{{pizza.type?.id}}</td>
-      <td>{{pizza.type?.name}}</td>
-    </tr>
-  </tbody>
-</table>
+    <thead class="thead-dark">
+      <tr>
+        <th class="NameTH" scope ="col">Name</th>
+        <th scope="col">Description</th>
+        <th scope="col">Price</th>
+        <th class="PizzaDetailsTH" scope="col">Pizza Details</th>
+      </tr>
+    </thead>
+
+
+    <tbody>
+
+      <ng-container *ngFor="let pizza of allPizza">
+
+
+        <tr (click)="toggleDetails(pizza)">
+          <td>{{pizza.name}}</td>
+          <td>{{pizza.smallDescription}}</td>
+          <td>{{pizza.price}} €</td>
+          <td><button class="expandButton">{{isExpanded(pizza.id) ? 'Show Less' : 'Show More'}}</button></td>
+        </tr>
+
+
+        <tr *ngIf=isExpanded(pizza.id) class="expanded-row">
+          <td><img src="./assets/img/pizza-logo.png"/></td>
+          <td colspan="4">
+            <div class="expanded-content">
+              <p>{{pizza.bigDescription}}</p>
+            </div>
+          </td>
+        </tr>
+
+
+      </ng-container>
+    </tbody>
+  </table> -->
+
+
+
+
+<h2>Pizza Menu</h2>
+
+
+<div class="Container">
+
+  <div class="ProductContainer" *ngFor="let pizza of allPizza">
+
+    <div class="ProductCard">
+
+      <div class="ProductImage"><img src="./assets/img/pizza-logo.png" /></div>
+
+      <div class="ProductInfo">
+        <h3 class="ProductName">{{pizza.name}}</h3>
+        <h4 class="ProductDescription">{{pizza.smallDescription}}</h4>
+        <h5 class="ProductPrice">{{pizza.price}} €</h5>
+        <div class="ProductButtons">
+          <div class="expandButton"><button>{{isExpanded(pizza.id) ? 'Show Less' : 'Show More'}}</button></div>
+          <div class="expandButton"><button><i class="fa-solid fa-cart-shopping"></i></button></div>
+          
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

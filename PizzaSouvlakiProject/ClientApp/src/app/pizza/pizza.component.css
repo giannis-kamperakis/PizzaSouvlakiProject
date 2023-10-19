@@ -1,0 +1,134 @@
+@media (max-width: 768px) {
+  .Container {
+    grid-template-columns: 1fr;
+  }
+
+  .ProductCard {
+    align-items: flex-start;
+  }
+}
+
+
+@media (min-width: 768px) {
+  .ProductCard {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+  }
+
+  .ProductImage {
+    margin-right: 10px;
+  }
+}
+
+h2 {
+  text-align: center;
+}
+
+  .NameTH{
+      width: 200px;
+  }
+
+  .PizzaDetailsTH{
+      width: 120px;
+  }
+
+  img {
+    height: 200px;
+    width: 200px;
+  }
+
+  tr:hover {
+    background-color: #F5F5F5;
+  }
+
+  button {
+    background-color: #999999;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    width: 120px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  }
+
+    button:hover {
+      background-color: #F33535;
+      box-shadow: 5px 5px 2.5px lightblue;
+    }
+
+.Container{
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+.ProductContainer {
+  border: 1px solid black;
+  border-radius: 15px;
+  margin: 10px;
+  height: auto;
+  width: auto;
+}
+
+    .ProductContainer:hover {
+      background-color: #F2F4F4;
+      box-shadow: 8px 8px 10px #D22B2B;
+    }
+
+    .ProductContainer > div {
+      margin: 2px;
+    }
+
+  .ProductCard{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+  }
+
+  .ProductImage{
+      height: 200px;
+      width: 200px;
+      margin: 5px;
+  }
+
+img {
+  border: 1px solid rgb(136, 8, 8);
+  border-radius: 20px;
+}
+
+  .ProductInfo{
+     width: auto;
+     margin: 5px;
+     
+  }
+
+    .ProductInfo > h3{
+        text-align: center;
+        margin: 2px;
+    }
+
+    .ProductInfo > h4 {
+      text-align: center;
+      font-weight: 400;
+      margin: 2px;
+    }
+
+    .ProductInfo > h5 {
+      text-align: center;
+      margin: 2px;
+    }
+
+    .ProductButtons {
+      display: flex;
+      margin: 5px;
+    }
+
+  .ProductButtons > i{
+      text-align: center;
+  }
+
+  
+

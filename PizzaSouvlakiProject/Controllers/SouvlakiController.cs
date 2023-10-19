@@ -14,7 +14,7 @@ namespace allSouvlakia.Controllers
     {
         private readonly ILogger<SouvlakiController> _logger;
         
-        string connectionString = "Data Source=(LocalDb)\\sqlite-customers; Initial Catalog=PizzaSouvlakiProject; Integrated Security=True";
+        string connectionString = "Data Source=(LocalDb)\\PizzaSouvlakiDB; Initial Catalog=PizzaSouvlakiProject; Integrated Security=True";
 
         static private List<Souvlaki> allSouvlakia = new List<Souvlaki>();
 
