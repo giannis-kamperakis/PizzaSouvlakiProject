@@ -1,4 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using PizzaSouvlakiProject.ReadModels;
+using PizzaSouvlakiProject.Services;
 
 namespace allPizzas.Controllers
 {
@@ -8,7 +10,7 @@ namespace allPizzas.Controllers
     {
         private readonly ILogger<PizzaController> _logger;
 
-        static private List<Pizza.ReadModels.Pizza> allPizza;
+        static private List<PizzaModel> allPizza = new List<PizzaModel>();
 
         public PizzaController(ILogger<PizzaController> logger)
         {
@@ -16,23 +18,23 @@ namespace allPizzas.Controllers
 
             if (!(allPizza.Count != 0))
             {
-                                
+                allPizza = new PizzaServices().GetEveryPizza();
             }
         }
 
         [HttpGet]
         [ProducesResponseType(400)]
         [ProducesResponseType(500)]
-        [ProducesResponseType(typeof(IEnumerable<Pizza.ReadModels.Pizza>), 200)]
-        public IEnumerable<Pizza.ReadModels.Pizza> Search()
+        [ProducesResponseType(typeof(IEnumerable<PizzaModel>), 200)]
+        public IEnumerable<PizzaModel> Search()
         => allPizza;
 
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [HttpGet("{id}")]
         [ProducesResponseType(400)]
         [ProducesResponseType(500)]
-        [ProducesResponseType(typeof(Pizza.ReadModels.Pizza),200)]
-        public ActionResult<Pizza.ReadModels.Pizza> Find(string id)
+        [ProducesResponseType(typeof(PizzaModel),200)]
+        public ActionResult<PizzaModel> Find(string id)
         {
             var flight = allPizza.SingleOrDefault(f => f.Id == id);
 

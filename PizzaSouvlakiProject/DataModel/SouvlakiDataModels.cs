@@ -1,24 +1,15 @@
-﻿using PizzaSouvlakiProject.ReadModels;
+﻿using Pizza.ReadModels;
+using PizzaSouvlakiProject.ReadModels;
 using System.Data.SqlClient;
 
 namespace PizzaSouvlakiProject.DataModel
 {
-    public class DataModel
+    public class SouvlakiDataModels
     {
-        public List<Pizza.ReadModels.Pizza> GetEveryPizza() {
-            string connectionString = "Data Source=(LocalDb)\\PizzaSouvlakiDB; Initial Catalog=PizzaSouvlakiProject; Integrated Security=True";
-            List<Pizza.ReadModels.Pizza> allPizza = new List<Pizza.ReadModels.Pizza>();
-            string query = @"
-                          SELECT 
-                            sou.Id, 
-                            sou.Name, 
-                            sou.SmallDescription, 
-                            sou.BigDescription,
-                            sou.Price,
-                            ty.Id,
-                            ty.Name
-                        FROM Pizza AS sou INNER JOIN FoodType as ty on sou.TypeId = ty.Id
-                    ";
+        public List<SouvlakiModel> RetrieveDataForEverySouvlaki(string connectionString, string query)
+        {
+
+            List<SouvlakiModel> allPizza = new List<SouvlakiModel>();
 
             using (SqlConnection connection = new SqlConnection(
                            connectionString))
@@ -46,7 +37,7 @@ namespace PizzaSouvlakiProject.DataModel
                         typeId = reader.GetValue(5).ToString();
                         typeName = reader.GetValue(6).ToString();
 
-                        allPizza.Add(new Pizza.ReadModels.Pizza(
+                        allPizza.Add(new SouvlakiModel(
                                     id,
                                     name,
                                     smallDescription,
@@ -60,7 +51,7 @@ namespace PizzaSouvlakiProject.DataModel
                 }
                 connection.Close();
             }
-            
+
             return allPizza;
         }
     }

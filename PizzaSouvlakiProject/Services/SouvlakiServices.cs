@@ -1,22 +1,22 @@
-﻿using PizzaSouvlakiProject.DataModel;
-using PizzaSouvlakiProject.Interfaces.IPizza;
-using PizzaSouvlakiProject.ReadModels;
+﻿using Pizza.ReadModels;
+using PizzaSouvlakiProject.DataModel;
+using static PizzaSouvlakiProject.Interfaces.ISouvlaki.SouvlakiInterfaces;
 
 namespace PizzaSouvlakiProject.Services
 {
-    public class PizzaServices : IPizzaGetEveryPizza
+    public class SouvlakiServices : ISouvlakiGetEverySouvlaki
     {
         string dataSource = "";
         string initialCatalog = "";
         string integratedSecurity = "";
 
-        public PizzaServices()
+        public SouvlakiServices()
         {
             this.dataSource = "(LocalDb)\\PizzaSouvlakiDB";
             this.initialCatalog = "PizzaSouvlakiProject";
             this.integratedSecurity = "true";
         }
-        public List<PizzaModel> GetEveryPizza()
+        public List<SouvlakiModel> GetEverySouvlaki()
         {
             string connectionString = $"Data Source = {this.dataSource}; Initial Catalog={this.initialCatalog}; Integrated Security={this.integratedSecurity}";
             string query = @"
@@ -29,8 +29,8 @@ namespace PizzaSouvlakiProject.Services
                             ty.Id,
                             ty.Name
                         FROM Pizza AS sou INNER JOIN FoodType as ty on sou.TypeId = ty.Id";
-    
-            return new PizzaDataModels().RetrieveDataForEveryPizza(connectionString, query);
+
+            return new SouvlakiDataModels().RetrieveDataForEverySouvlaki(connectionString, query);
 
         }
     }
