@@ -74,7 +74,6 @@ namespace allSouvlakia.Controllers
                                     )
                             );
                         }
-
                         reader.Close();
                     }
                     connection.Close();
