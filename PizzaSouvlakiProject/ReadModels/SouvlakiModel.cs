@@ -2,7 +2,7 @@
 
 namespace Pizza.ReadModels
 {
-    public class Souvlaki
+    public class SouvlakiModel
     {
         public string Id { get; set; }
         public string Name { get; set; }
@@ -11,7 +11,7 @@ namespace Pizza.ReadModels
         public FoodType Type { get; set; }
         public string Price { get; set; }
 
-        public Souvlaki(string id, string name, string smallDescription, string bigDescription, string price, FoodType type)
+        public SouvlakiModel(string id, string name, string smallDescription, string bigDescription, string price, FoodType type)
         {
             Id = id;
             Name = name;

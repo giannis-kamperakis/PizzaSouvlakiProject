@@ -2,9 +2,6 @@
 using Microsoft.AspNetCore.Mvc;
 using System.Data.SqlClient;
 using PizzaSouvlakiProject.ReadModels;
-using System.Reflection.PortableExecutable;
-using System.Data;
-using System.Linq;
 
 namespace allSouvlakia.Controllers
 {
@@ -16,7 +13,7 @@ namespace allSouvlakia.Controllers
         
         string connectionString = "Data Source=(LocalDb)\\PizzaSouvlakiDB; Initial Catalog=PizzaSouvlakiProject; Integrated Security=True";
 
-        static private List<Souvlaki> allSouvlakia = new List<Souvlaki>();
+        static private List<SouvlakiModel> allSouvlakia = new List<SouvlakiModel>();
 
         public SouvlakiController(ILogger<SouvlakiController> logger)
         {
@@ -64,7 +61,7 @@ namespace allSouvlakia.Controllers
                             typeId = reader.GetValue(5).ToString();
                             typeName = reader.GetValue(6).ToString();
 
-                            allSouvlakia.Add(new Souvlaki(
+                            allSouvlakia.Add(new SouvlakiModel(
                                         id,
                                         name,
                                         smallDescription,
@@ -74,7 +71,6 @@ namespace allSouvlakia.Controllers
                                     )
                             );
                         }
-
                         reader.Close();
                     }
                     connection.Close();
@@ -85,16 +81,16 @@ namespace allSouvlakia.Controllers
         [HttpGet]
         [ProducesResponseType(400)]
         [ProducesResponseType(500)]
-        [ProducesResponseType(typeof(IEnumerable<Souvlaki>), 200)]
-        public IEnumerable<Souvlaki> Search()
+        [ProducesResponseType(typeof(IEnumerable<SouvlakiModel>), 200)]
+        public IEnumerable<SouvlakiModel> Search()
         => allSouvlakia;
 
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [HttpGet("{id}")]
         [ProducesResponseType(400)]
         [ProducesResponseType(500)]
-        [ProducesResponseType(typeof(Souvlaki),200)]
-        public ActionResult<Souvlaki> Find(string id)
+        [ProducesResponseType(typeof(SouvlakiModel),200)]
+        public ActionResult<SouvlakiModel> Find(string id)
         {
             var oneSouvlaki = allSouvlakia.SingleOrDefault(f => f.Id == id);
 

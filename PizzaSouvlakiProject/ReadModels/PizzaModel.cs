@@ -1,8 +1,6 @@
-﻿using PizzaSouvlakiProject.ReadModels;
-
-namespace Pizza.ReadModels
+﻿namespace PizzaSouvlakiProject.ReadModels
 {
-    public class Pizza
+    public class PizzaModel
     {
         public string Id { get; set; }
         public string Name { get; set; }
@@ -11,8 +9,7 @@ namespace Pizza.ReadModels
         public FoodType Type { get; set; }
         public string Price { get; set; }
 
-
-        public Pizza(string id, string name, string smallDescription, string bigDescription, string price, FoodType type)
+        public PizzaModel(string id, string name, string smallDescription, string bigDescription, string price, FoodType type)
         {
             Id = id;
             Name = name;
@@ -22,6 +19,4 @@ namespace Pizza.ReadModels
             Price = price;
         }
     }
-
-
 }
