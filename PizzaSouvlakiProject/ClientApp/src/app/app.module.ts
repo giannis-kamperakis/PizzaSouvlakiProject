@@ -12,6 +12,7 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { SouvlakiComponent } from './souvlaki/souvlaki.component';
 import { SouvlakiDetailsComponent } from './souvlaki-details/souvlaki-details.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
+import { FooterSectionComponent } from './footer-section/footer-section.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
     PizzaDetailsComponent,
     HomepageComponent,
     SouvlakiComponent,
-    ContactUsComponent
+    ContactUsComponent,
+    FooterSectionComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
