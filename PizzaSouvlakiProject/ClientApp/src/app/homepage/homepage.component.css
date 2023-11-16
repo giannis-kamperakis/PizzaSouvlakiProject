@@ -1,0 +1,22 @@
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.bolder{
+    font-weight: 600;
+}
+
+.title-properties{
+    color: black;
+}
+
+.title-properties:hover{
+    color: red;
+}
+
+.paragraph-properties:hover{
+    color: red;
+}
