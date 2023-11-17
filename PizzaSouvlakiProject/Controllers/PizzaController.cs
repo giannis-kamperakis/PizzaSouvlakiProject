@@ -22,6 +22,9 @@ namespace allPizzas.Controllers
             }
         }
 
+        ///<summary>
+        //We use this method to get every pizza from the database.
+        ///</summary>
         [HttpGet]
         [ProducesResponseType(400)]
         [ProducesResponseType(500)]
@@ -29,6 +32,9 @@ namespace allPizzas.Controllers
         public IEnumerable<PizzaModel> Search()
         => allPizza;
 
+        ///<summary>
+        //We use this method to get a pizza from the database with a specific id.
+        ///</summary>
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [HttpGet("{id}")]
         [ProducesResponseType(400)]

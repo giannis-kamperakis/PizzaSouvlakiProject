@@ -78,6 +78,9 @@ namespace allSouvlakia.Controllers
             }
         }
 
+        ///<summary>
+        //We use this method to get every souvlaki from the database.
+        ///</summary>
         [HttpGet]
         [ProducesResponseType(400)]
         [ProducesResponseType(500)]
@@ -85,6 +88,9 @@ namespace allSouvlakia.Controllers
         public IEnumerable<SouvlakiModel> Search()
         => allSouvlakia;
 
+        ///<summary>
+        //We use this method to get a souvlaki from the database with a specific id.
+        ///</summary>
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [HttpGet("{id}")]
         [ProducesResponseType(400)]
