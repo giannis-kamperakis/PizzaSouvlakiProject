@@ -13,6 +13,7 @@ import { SouvlakiComponent } from './souvlaki/souvlaki.component';
 import { SouvlakiDetailsComponent } from './souvlaki-details/souvlaki-details.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { FooterSectionComponent } from './footer-section/footer-section.component';
+import { UspsAreaComponent } from './usps-area/usps-area.component';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { FooterSectionComponent } from './footer-section/footer-section.componen
     HomepageComponent,
     SouvlakiComponent,
     ContactUsComponent,
-    FooterSectionComponent
+    FooterSectionComponent,
+    UspsAreaComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
