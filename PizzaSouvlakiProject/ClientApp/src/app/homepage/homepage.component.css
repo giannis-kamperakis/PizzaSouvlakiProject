@@ -29,8 +29,15 @@
 
 .hot-offers {
   margin: auto;
-  height: 220px;
-  width: 1000px;
-  background-image: linear-gradient(180deg, red, yellow);
+  height: 260px;
+  width: 1200px;
+  background-image: linear-gradient(180deg, blue, yellow);
   color: white;
+  border: 0.1px white;
+  border-radius: 10px;
+}
+
+.carousel-styling{
+    width: 1350px;
+    margin: auto;
 }
