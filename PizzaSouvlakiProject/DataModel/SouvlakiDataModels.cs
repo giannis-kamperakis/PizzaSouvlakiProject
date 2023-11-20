@@ -9,7 +9,7 @@ namespace PizzaSouvlakiProject.DataModel
         public List<SouvlakiModel> RetrieveDataForEverySouvlaki(string connectionString, string query)
         {
 
-            List<SouvlakiModel> allPizza = new List<SouvlakiModel>();
+            List<SouvlakiModel> allSouvlakia = new List<SouvlakiModel>();
 
             using (SqlConnection connection = new SqlConnection(
                            connectionString))
@@ -37,7 +37,7 @@ namespace PizzaSouvlakiProject.DataModel
                         typeId = reader.GetValue(5).ToString();
                         typeName = reader.GetValue(6).ToString();
 
-                        allPizza.Add(new SouvlakiModel(
+                        allSouvlakia.Add(new SouvlakiModel(
                                     id,
                                     name,
                                     smallDescription,
@@ -52,7 +52,7 @@ namespace PizzaSouvlakiProject.DataModel
                 connection.Close();
             }
 
-            return allPizza;
+            return allSouvlakia;
         }
     }
 }

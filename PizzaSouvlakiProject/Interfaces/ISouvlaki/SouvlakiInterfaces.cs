@@ -1,5 +1,4 @@
 ﻿using Pizza.ReadModels;
-using PizzaSouvlakiProject.ReadModels;
 
 namespace PizzaSouvlakiProject.Interfaces.ISouvlaki
 {
