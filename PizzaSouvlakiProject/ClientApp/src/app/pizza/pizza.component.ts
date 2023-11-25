@@ -10,6 +10,7 @@ import { Pizza, FoodType } from '../api/models';
 export class PizzaComponent implements OnInit {
 
   allPizza: Pizza[] = []
+  expandedPizzaRows: Set<string> = new Set();
 
   constructor(private pizzaService: PizzaService) { }
 
@@ -23,14 +24,9 @@ export class PizzaComponent implements OnInit {
         this.handleError)
   }
 
-
-
-  expandedPizzaRows: Set<string> = new Set();
-
   isExpanded(pizzaId: string | null | undefined): boolean {
     return !!pizzaId && this.expandedPizzaRows.has(pizzaId);
   }
-
 
   toggleDetails(pizza: any) {
     const pizzaId = pizza.id.toString();
@@ -42,12 +38,9 @@ export class PizzaComponent implements OnInit {
     }
   }
 
-
-
   private handleError(err: any) {
     console.log("Response Error. Status: ", err.status)
     console.log("Response Error. Status Text: ", err.statusText)
     console.log(err)
   }
-
 }

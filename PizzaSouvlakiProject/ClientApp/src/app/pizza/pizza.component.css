@@ -1,22 +1,22 @@
 @media (max-width: 768px) {
-  .Container {
+  .container {
     grid-template-columns: 1fr;
   }
 
-  .ProductCard {
+  .product-card {
     align-items: flex-start;
   }
 }
 
 
 @media (min-width: 768px) {
-  .ProductCard {
+  .product-card {
     flex-direction: row;
     justify-content: space-between;
     text-align: left;
   }
 
-  .ProductImage {
+  .product-image {
     margin-right: 10px;
   }
 }
@@ -25,11 +25,11 @@ h2 {
   text-align: center;
 }
 
-.NameTH{
+.nameth{
     width: 200px;
 }
 
-.PizzaDetailsTH{
+.pizzadetailsth{
     width: 120px;
 }
 
@@ -59,12 +59,12 @@ button:hover {
   box-shadow: 5px 5px 2.5px lightblue;
 }
 
-.Container{
+.container{
     display: grid;
     grid-template-columns: auto auto;
 }
 
-.ProductContainer {
+.product-container {
   border: 1px solid black;
   border-radius: 15px;
   margin: 10px;
@@ -72,23 +72,23 @@ button:hover {
   width: auto;
 }
 
-.ProductContainer:hover {
+.product-container:hover {
   background-color: #F2F4F4;
   box-shadow: 8px 8px 10px #D22B2B;
 }
 
-.ProductContainer > div {
+.product-container > div {
   margin: 2px;
 }
 
-.ProductCard{
+.product-card{
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
 }
 
-.ProductImage{
+.product-image{
   height: 200px;
   width: 200px;
   margin: 5px;
@@ -99,34 +99,34 @@ img {
   border-radius: 20px;
 }
 
-.ProductInfo{
+.product-info{
     width: auto;
     margin: 5px;
      
 }
 
-.ProductInfo > h3{
+.product-info > h3{
     text-align: center;
     margin: 2px;
 }
 
-.ProductInfo > h4 {
+.product-info > h4 {
   text-align: center;
   font-weight: 400;
   margin: 2px;
 }
 
-.ProductInfo > h5 {
+.product-info > h5 {
   text-align: center;
   margin: 2px;
 }
 
-.ProductButtons {
+.product-buttons {
   display: flex;
   margin: 5px;
 }
 
-.ProductButtons > i{
+.product-buttons > i{
     text-align: center;
 }
 

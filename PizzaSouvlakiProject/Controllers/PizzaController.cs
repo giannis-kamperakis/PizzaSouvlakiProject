@@ -15,11 +15,6 @@ namespace allPizzas.Controllers
         public PizzaController(ILogger<PizzaController> logger)
         {
             _logger = logger;
-
-            if (!(allPizza.Count != 0))
-            {
-                allPizza = new PizzaServices().GetEveryPizza();
-            }
         }
 
         ///<summary>
@@ -30,7 +25,10 @@ namespace allPizzas.Controllers
         [ProducesResponseType(500)]
         [ProducesResponseType(typeof(IEnumerable<PizzaModel>), 200)]
         public IEnumerable<PizzaModel> Search()
-        => allPizza;
+        {
+            allPizza = new PizzaServices().GetEveryPizza();
+            return allPizza;
+        }
 
         ///<summary>
         //We use this method to get a pizza from the database with a specific id.
