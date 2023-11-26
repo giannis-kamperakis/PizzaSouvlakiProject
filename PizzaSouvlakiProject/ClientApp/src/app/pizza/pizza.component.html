@@ -1,29 +1,39 @@
 <h2>Pizza Menu</h2>
-<div class="container">
-  <div class="product-container" *ngFor="let pizza of allPizza">
-    <div class="product-card">
-      <div class="product-image">
-        <img src="./assets/img/pizza-logo.png" />
-      </div>
+<div class="container-fluid justify-content-center m-0 p-0 mt-4">
+  <div class="row container-row m-0 p-0 w-100">
+    <div class="col-2 bg-dark">
+      1 of 2
+    </div>
+    <div class="col-8">
+      <div class="product-container m-auto mb-3" *ngFor="let pizza of allPizza">
+        <div class="product-card pt-0">
+          <div class="product-image">
+            <img src="./assets/img/pizza-logo.png" />
+          </div>
 
-      <div class="product-info">
-        <h3 class="product-name">
-          {{pizza.name}}
-        </h3>
+          <div class="product-info">
+            <h3 class="product-name">
+              {{pizza.name}}
+            </h3>
 
-        <h4 class="product-description">
-          {{pizza.smallDescription}}
-        </h4>
+            <h4 class="product-description">
+              {{pizza.smallDescription}}
+            </h4>
 
-        <h5 class="product-price">
-          {{pizza.price}} €
-        </h5>
+            <h5 class="product-price">
+              {{pizza.price}} €
+            </h5>
 
-        <div class="product-buttons">
-          <div class="expand-buttons"><button>{{isExpanded(pizza.id) ? 'Show Less' : 'Show More'}}</button></div>
-          <div class="expand-buttons"><button><i class="fa-solid fa-cart-shopping"></i></button></div>     
+            <div class="product-buttons">
+              <div class="expand-buttons"><button>{{isExpanded(pizza.id) ? 'Show Less' : 'Show More'}}</button></div>
+              <div class="expand-buttons"><button><i class="fa-solid fa-cart-shopping"></i></button></div>
+            </div>
+          </div>
         </div>
       </div>
+    </div>
+    <div class="col-2 bg-dark">
+      3 of 2
     </div>
   </div>
 </div>

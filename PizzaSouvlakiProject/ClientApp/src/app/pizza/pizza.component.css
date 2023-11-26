@@ -68,8 +68,8 @@ button:hover {
   border: 1px solid black;
   border-radius: 15px;
   margin: 10px;
-  height: auto;
-  width: auto;
+  height: 400px;
+  width: 400px;
 }
 
 .product-container:hover {
@@ -130,5 +130,6 @@ img {
     text-align: center;
 }
 
-  
-
+.container-row{
+  width: 1300px;
+}
