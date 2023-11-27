@@ -1,5 +1,7 @@
 ﻿using Pizza.ReadModels;
 using Microsoft.AspNetCore.Mvc;
+using System.Data.SqlClient;
+using PizzaSouvlakiProject.ReadModels;
 using PizzaSouvlakiProject.Services;
 
 namespace allSouvlakia.Controllers
@@ -10,6 +12,8 @@ namespace allSouvlakia.Controllers
     {
         private readonly ILogger<SouvlakiController> _logger;
         
+        string connectionString = "Data Source=(LocalDb)\\PizzaSouvlakiDB; Initial Catalog=PizzaSouvlakiProject; Integrated Security=True";
+
         static private List<SouvlakiModel> allSouvlakia = new List<SouvlakiModel>();
 
         public SouvlakiController(ILogger<SouvlakiController> logger)
@@ -26,10 +30,10 @@ namespace allSouvlakia.Controllers
         [ProducesResponseType(typeof(IEnumerable<SouvlakiModel>), 200)]
         public IEnumerable<SouvlakiModel> Search()
         {
-            allSouvlakia = new SouvlakiServices().GetEverySouvlaki(); ;
+            allSouvlakia = new SouvlakiServices().GetEverySouvlaki();
             return allSouvlakia;
         }
-        
+
 
         ///<summary>
         //We use this method to get a souvlaki from the database with a specific id.

@@ -26,7 +26,7 @@ namespace allPizzas.Controllers
         [ProducesResponseType(typeof(IEnumerable<PizzaModel>), 200)]
         public IEnumerable<PizzaModel> Search()
         {
-            allPizza = new PizzaServices().GetEveryPizza(); ;
+            allPizza = new PizzaServices().GetEveryPizza();
             return allPizza;
         }
 
