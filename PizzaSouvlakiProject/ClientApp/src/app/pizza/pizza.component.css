@@ -8,7 +8,6 @@
   }
 }
 
-
 @media (min-width: 768px) {
   .product-card {
     flex-direction: row;
@@ -132,4 +131,17 @@ img {
 
 .container-row{
   width: 1300px;
+}
+
+#left-side-img {
+  background-image: url("../../assets/img/horizontal-pizza-img.jpg");
+}
+
+#right-side-img {
+  background-image: url("../../assets/img/horizontal-pizza-img.jpg");
+  transform: scaleX(-1);
+}
+
+.product-buttons .expand-buttons{
+    padding: 5px;
 }

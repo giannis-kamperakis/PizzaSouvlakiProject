@@ -12,8 +12,6 @@ namespace allSouvlakia.Controllers
     {
         private readonly ILogger<SouvlakiController> _logger;
         
-        string connectionString = "Data Source=(LocalDb)\\PizzaSouvlakiDB; Initial Catalog=PizzaSouvlakiProject; Integrated Security=True";
-
         static private List<SouvlakiModel> allSouvlakia = new List<SouvlakiModel>();
 
         public SouvlakiController(ILogger<SouvlakiController> logger)
