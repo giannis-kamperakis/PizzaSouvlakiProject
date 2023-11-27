@@ -19,10 +19,6 @@ namespace allSouvlakia.Controllers
         public SouvlakiController(ILogger<SouvlakiController> logger)
         {
             _logger = logger;
-
-            if ( !(allSouvlakia.Count != 0) ) {
-                allSouvlakia = new SouvlakiServices().GetEverySouvlaki();
-            }
         }
 
         ///<summary>
@@ -33,7 +29,11 @@ namespace allSouvlakia.Controllers
         [ProducesResponseType(500)]
         [ProducesResponseType(typeof(IEnumerable<SouvlakiModel>), 200)]
         public IEnumerable<SouvlakiModel> Search()
-        => allSouvlakia;
+        {
+            allSouvlakia = new SouvlakiServices().GetEverySouvlaki();
+            return allSouvlakia;
+        }
+
 
         ///<summary>
         //We use this method to get a souvlaki from the database with a specific id.

@@ -28,7 +28,7 @@ namespace PizzaSouvlakiProject.Services
                             sou.Price,
                             ty.Id,
                             ty.Name
-                        FROM Pizza AS sou INNER JOIN FoodType as ty on sou.TypeId = ty.Id";
+                        FROM Souvlaki AS sou INNER JOIN FoodType as ty on sou.TypeId = ty.Id";
 
             return new SouvlakiDataModels().RetrieveDataForEverySouvlaki(connectionString, query);
 
